@@ -9,7 +9,7 @@
 <table border="0" width="70%">
 <tr>
 <td>Nom d'utilisateur : </td>
-<td><input type="text" name="login"/></td>
+<td><input style="width:5px" type="text" name="login"/></td>
 </tr>
 <tr>
 <td>Mot de passe : </td>
