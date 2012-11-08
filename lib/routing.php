@@ -56,7 +56,7 @@ function route_to($route)
 	
 	//on appel la fonction voulue avec le bon nmpbre de paramètres
 	if(count($route[1]) == 0) header('Location: index'); 
-	try {
+	if (method_exists($obj, $route[1]) {
 	if(count($route[2]) == 2)
 		$obj->$route[1]($route[2][0], $route[2][1]);
 	else if(count($route[2]) == 1)
@@ -65,11 +65,7 @@ function route_to($route)
 		$obj->$route[1]($route[2][0], $route[2][1], $route[2][2]);
 	else if (count($route[2])>3)
 		$obj->$route[1]($route[2][0], $route[2][1], $route[2][2]);
-	} catch (Exception $e) {
-		header('Location: index'); 
-	}
-
-	
+	} else header('Location: index'); 
 	
 }
 
