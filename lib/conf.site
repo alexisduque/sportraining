@@ -1,0 +1,6 @@
+<?php
+    $mysql = mysql_connect("mysql2.000webhost.com", "a9912771_admin", "alexis30");
+    $bdd = mysql_select_db("a9912771_sport", $mysql);
+    mysql_set_charset('LATIN1');
+    
+?>

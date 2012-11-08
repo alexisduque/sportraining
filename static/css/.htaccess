@@ -1,0 +1,9 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+
+Options +FollowSymlinks
+RewriteEngine on
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-d
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+RewriteBase /
+RewriteRule ^/?(.*) sportraining/index.php
