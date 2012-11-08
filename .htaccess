@@ -1,0 +1,10 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+php_flag register_globals on
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^/?(.*) index.php
