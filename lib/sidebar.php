@@ -10,7 +10,7 @@ include("lib/fonctions.php");
 			<li>Nous sommes le <?php echo date('l jS F Y');?></li>
 			<li><?php echo ('L\'utilisateur qui a réalisé le plus de distance est '.htmlspecialchars($donnees['user']). ' avec ' .htmlspecialchars($donnees['maxdisttot']).' kilometres') ; ?></li>
 			</p>
-<p><?php 		
+<p><br><?php 		
 			$reponse = mysql_query ('SELECT user.user , SUM(effectue.Distance) AS maxdistmonth FROM `effectue` INNER JOIN user WHERE effectue.User_Id = user.id AND MONTH(Date) LIKE '.date("m").' GROUP BY User_Id ORDER BY MAX(Distance) DESC');?>
 <?php		if ($reponse != False) $donnees = mysql_fetch_array($reponse); ?> 
 			<li><?php echo ('L\'utilisateur qui a réalisé le plus de distance ce mois-çi est '.htmlspecialchars($donnees['user']). ' avec ' .htmlspecialchars($donnees['maxdistmonth']).' kilometres') ;?></li>			
