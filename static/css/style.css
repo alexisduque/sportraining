@@ -60,7 +60,7 @@ a:hover {
 	float:right;
 	width:180px;
 	background:#efefef;
-	margin-right:10px;
+	margin-right:0px;
 	}
 #content {
 	float:left;
@@ -227,7 +227,7 @@ a:hover.feed-button {
 /* Extra's */
 
 #ban {
-	width:510px;
+	width:509px;
 	height:100px;
 	background:url(/static/images/ban.jpg) no-repeat;
 	padding:5px;
