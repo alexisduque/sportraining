@@ -101,6 +101,13 @@ class SportrainingController extends BaseController
         
 	}
 	
+	public function updatetrainingfct()
+	{
+		
+		include("lib/updatetrainingfct.php");
+        
+	}
+	
 		public function calendrier($year, $month, $day)
 	{
 		$params[0] = $year;

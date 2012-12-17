@@ -64,7 +64,7 @@ include("lib/conf.site");
 		$('.entrainement').hide()
 		<?php
 		$_SESSION['nb']; 
-		$_SESSION['training']; 
+
 		if (isset($_POST['sport']) || isset($_POST['new_existe']))
 			echo " $('#entrainement".($_SESSION['nb']+2)."').show(); " ;
 			else echo "$('.entrainement:first').show();"
@@ -179,7 +179,7 @@ include("lib/conf.site");
 		$compteur=1;
 		$request = mysql_query($req);
 		while (($request != FALSE) && ($donnees = mysql_fetch_assoc($request))){
-		
+		$_SESSION[$compteur]['training'] = $donnees;
 		echo '<div  class="entrainement" id="entrainement'.$compteur.'" >'; 
 		echo '<h2> Entrainement '.$compteur.' du '.$date_url_sql->format('l jS F Y').'</h2>';
 		
@@ -234,30 +234,33 @@ include("lib/conf.site");
 		<?php
 		if ($compteur!=1 and $compteur != $_SESSION['nb']+1) :
 			echo '<a id = "entrainementLink'.($compteur-1).'" ><img src="/static/images/previousButton.png" style="position : relative; top : 9px; margin-right : 8px;" > Entrainement Précedent </a>';
+			//	if ($compteur != 1 and $) : $_SESSION['nbr']=($compteur); endif;
 			endif;
 		if ($compteur != ($_SESSION['nb']) and ($_SESSION['nb']+1)) :
 			echo '<a id = "entrainementLink'. ($compteur+1).'" style="position = relative; margin-left = 10px;"> Entrainement Suivant<img src="/static/images/nextButton.png" style="position : relative; top : 9px; margin-left : 8px;"></a>';
+			$_SESSION['nbr']=$compteur;
 			endif;
 		
 		echo '<br /><a id = "entrainementLink'.($_SESSION['nb']+2).'" ><img src="/static/images/add.png" style="position : relative; top : 5px;" > Ajouter un Nouvel Entrainement le '.$date_url_sql->format('l jS F Y').' </a>';
 		
-		
 		echo '</div>';
+		
 		$compteur = $compteur + 1;
 		}
 		if ($_SESSION['nb'] == 0) :
 			echo '<div class="entrainement" id="entrainement'.($_SESSION['nb']+1).'"><a id = "entrainementLink'.($_SESSION['nb']+2).'" ><img src="/static/images/addButton.png" style="position : relative; top : 5px;" > Ajouter un Nouvel Entrainement le '.$date_url_sql->format('l jS F Y').' </a></div>';
 			endif;
+			
 		echo '<div  class="entrainement" id="entrainement'.($_SESSION['nb']+2).'" >';
 		include ('app/views/sportraining/addtraining.php');
-		
-
 	?>
 	</div>
+
 		<?php 		
 			echo '<div  class="entrainement" id="entrainement'.($_SESSION['nb']+3).'" >';
 			
 			include ('app/views/sportraining/updatetraining.php');
 		?>
 	</div>
+
 </div>
