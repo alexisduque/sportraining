@@ -217,7 +217,13 @@ include("lib/conf.site");
 					<h5><?php echo htmlspecialchars($donnees['Comments']);?></h5>
 				</td>
 			</tr>
-			
+			<tr>
+				<td>
+					<?php 
+					echo '<a id = "entrainementLink'.($_SESSION['nb']+3).'" ><img src="/static/images/calendar_edit.png" style="position : relative; top : 5px;" > Modifier l\'entrainement </a>';
+					?>
+				</td>
+			</tr>
 		</table>
 		<?php
 		if ($compteur!=1 and $compteur != $_SESSION['nb']+1) :
@@ -227,7 +233,8 @@ include("lib/conf.site");
 			echo '<a id = "entrainementLink'. ($compteur+1).'" style="position = relative; margin-left = 10px;"> Entrainement Suivant<img src="/static/images/nextButton.png" style="position : relative; top : 9px; margin-left : 8px;"></a>';
 			endif;
 		
-		echo '<br /><a id = "entrainementLink'.($_SESSION['nb']+2).'" ><img src="/static/images/addButton.png" style="position : relative; top : 5px;" > Ajouter un Nouvel Entrainement le '.$date_url_sql->format('l jS F Y').' </a>';
+		echo '<br /><a id = "entrainementLink'.($_SESSION['nb']+2).'" ><img src="/static/images/add.png" style="position : relative; top : 5px;" > Ajouter un Nouvel Entrainement le '.$date_url_sql->format('l jS F Y').' </a>';
+		
 		
 		echo '</div>';
 		$compteur = $compteur + 1;
@@ -237,7 +244,13 @@ include("lib/conf.site");
 			endif;
 		echo '<div  class="entrainement" id="entrainement'.($_SESSION['nb']+2).'" >';
 		include ('app/views/sportraining/addtraining.php');
+		
+
 	?>
-	
+	</div>
+		<?php 		
+			echo '<div  class="entrainement" id="entrainement'.($_SESSION['nb']+3).'" >';
+			include ('app/views/sportraining/addtraining.php');
+		?>
 	</div>
 </div>
