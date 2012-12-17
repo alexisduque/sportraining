@@ -105,10 +105,10 @@ include("lib/conf.site");
 			
 			<caption style = "position = relative; margin-bottom = 30px;">
 				<h3>
-				<a href="/sportraining/calendrier/<?php if($month == 01){echo $year-1;}else{echo $year;} ?>/<?php if($month == 01){echo 12;}else{echo $date_url_sql->modify('-1 month');echo $date_url_sql->format('m');}  ?>/01"> <img src="/static/images/previousButton.png" style="position : relative; top : 9px; margin-right : 8px;" > </a>				
+				<a href="/sportraining/calendrier/<?php if($month == 01){echo $year-1;}else{echo $year;} ?>/<?php if($month == 01){echo 12;}else{$date_url_sql->modify('-1 month');echo $date_url_sql->format('m');}  ?>/01"> <img src="/static/images/previousButton.png" style="position : relative; top : 9px; margin-right : 8px;" > </a>				
 				<?php $mo = $date->months[$m-1];
 				 echo ("$mo $year "); ?>
-				<a href="/sportraining/calendrier/<?php if($month == 12){echo $year+1;}else{echo $year;} ?>/<?php if($month == 12){echo "01";}else{echo $date_url_sql->modify('+2 month'); echo $date_url_sql->format('m');}  ?>/01">  <img src="/static/images/nextButton.png" style="position : relative; top : 9px; margin-left : 8px;" > </a>
+				<a href="/sportraining/calendrier/<?php if($month == 12){echo $year+1;}else{echo $year;} ?>/<?php if($month == 12){echo "01";}else{$date_url_sql->modify('+2 month'); echo $date_url_sql->format('m');}  ?>/01">  <img src="/static/images/nextButton.png" style="position : relative; top : 9px; margin-left : 8px;" > </a>
 				</h3>
 			</caption>
 			
@@ -224,16 +224,16 @@ include("lib/conf.site");
 			echo '<a id = "entrainementLink'.($compteur-1).'" ><img src="/static/images/previousButton.png" style="position : relative; top : 9px; margin-right : 8px;" > Entrainement Précedent </a>';
 			endif;
 		if ($compteur != ($_SESSION['nb']) and ($_SESSION['nb']+1)) :
-			echo '<a id = "entrainementLink'. ($compteur+1).'" style="position = relative; margin-left = 10px;"> Entrainement Suivant<img src="/sportraining/static/images/nextButton.png" style="position : relative; top : 9px; margin-left : 8px;"></a>';
+			echo '<a id = "entrainementLink'. ($compteur+1).'" style="position = relative; margin-left = 10px;"> Entrainement Suivant<img src="/static/images/nextButton.png" style="position : relative; top : 9px; margin-left : 8px;"></a>';
 			endif;
 		
-		echo '<br /><a id = "entrainementLink'.($_SESSION['nb']+2).'" ><img src="/sportraining/static/images/addButton.png" style="position : relative; top : 5px;" > Ajouter un Nouvel Entrainement le '.$date_url_sql->format('l jS F Y').' </a>';
+		echo '<br /><a id = "entrainementLink'.($_SESSION['nb']+2).'" ><img src="/static/images/addButton.png" style="position : relative; top : 5px;" > Ajouter un Nouvel Entrainement le '.$date_url_sql->format('l jS F Y').' </a>';
 		
 		echo '</div>';
 		$compteur = $compteur + 1;
 		}
 		if ($_SESSION['nb'] == 0) :
-			echo '<div class="entrainement" id="entrainement'.($_SESSION['nb']+1).'"><a id = "entrainementLink'.($_SESSION['nb']+2).'" ><img src="/sportraining/static/images/addButton.png" style="position : relative; top : 5px;" > Ajouter un Nouvel Entrainement le '.$date_url_sql->format('l jS F Y').' </a></div>';
+			echo '<div class="entrainement" id="entrainement'.($_SESSION['nb']+1).'"><a id = "entrainementLink'.($_SESSION['nb']+2).'" ><img src="/static/images/addButton.png" style="position : relative; top : 5px;" > Ajouter un Nouvel Entrainement le '.$date_url_sql->format('l jS F Y').' </a></div>';
 			endif;
 		echo '<div  class="entrainement" id="entrainement'.($_SESSION['nb']+2).'" >';
 		include ('app/views/sportraining/addtraining.php');
