@@ -34,31 +34,63 @@ echo '</style>';
 		<br>
 
 		</div>
-     <form id ="choix" method="post">
-	  <label>
-	    <input type="radio" name="new_existe" value="1" id="new_exist_0" onclick="submit(this)" <?php if (isset($_POST['new_existe']) && ($_POST['new_existe'] == 1)) echo 'checked="checked"'?> />
-      Nouvelle seance</label>
-	  <br />
-	  <label>
-	    <input name="new_existe" type="radio" id="new_exist_1" onclick="submit(this)" value="2" <?php if (!isset($_POST['new_existe']) || ($_POST['new_existe'] == 2)) echo 'checked="checked"'?> />
-	    Seance existante</label>
-	</p>
-    </form>      
-<?php
 
-if ( (isset ($_POST['new_existe'])) && ($_POST['new_existe']== 1)) $new = 1 ;
-else if ( (isset ($_POST['new_existe'])) && ($_POST['new_existe']==2)) $new = 2 ;
-else $new=2 ;
 
-if ($new == 2)
-{
-	include("lib/training.php");
-}
-else
-{
-	include("lib/training_tot.php");
-}
-?>
+
+<form id="add" action="/sportraining/addtrainingfct" method="post">  
+
+    <p>Contenu : <br />
+      <span id="sprytextarea1">
+      <textarea name="contenu"><?php echo htmlspecialchars($_SESSION['training']['Contenu']);?></textarea>
+      <span class="textareaRequiredMsg">Une valeur est requise.</span></span><br />
+
+		Date : (format: aaaa-mm-jj) <br />
+		      <input type="text" readonly name="date"  <?php if (isset($date_url_sql))echo 'value="'.$date_url_sql->format('Y/m/d').'"' ; else echo "value=\"2012/06/01\" onClick=\"displayCalendar(this,'yyyy/mm/dd', this)\" ";?>/>
+		<br />
+<br />
+		Duree : <br />
+    <span id="duree">
+    <input type="text" name="duree"/>
+    <span class="textfieldRequiredMsg">Une valeur est requise.</span><span class="textfieldInvalidFormatMsg">Format non valide.</span></span><br />
+<br />
+		Difficulte : <br />
+		<label for="difficulte"></label>
+		<select name="difficulte" id="difficulte">
+		  <option>1</option>
+		  <option>2</option>
+		  <option>3</option>
+		  <option>4</option>
+		  <option>5</option>
+		  <option>6</option>
+		  <option>7</option>
+		  <option>8</option>
+		  <option>9</option>
+		  <option>10</option>
+    </select>
+		<br />
+<br />
+		Fcmoy : <br />
+    <span id="fcmoy">
+    <input type="text" name="fcmoy"/>
+    <span class="textfieldRequiredMsg">Une valeur est requise.</span><span class="textfieldInvalidFormatMsg">Format non valide.</span></span><br />
+<br />
+		Comments : <br />
+		<span id="comments">
+		<textarea name="comments"></textarea>
+	<span class="textareaRequiredMsg">Une valeur est requise.</span></span></p>
+    <p>Distance :<br />
+     <span id="distance">
+    <input type="text" name="distance" id="distance"/>
+<span class="textfieldInvalidFormatMsg">Format non valide.</span></span><br />
+      <br />
+      <input type="submit" value="Valider" />
+    </p>
+</form>
+<div class="comments"></div>
+		</div>
+
+
+
 	
 <script type="text/javascript">
 var sprytextfield1 = new Spry.Widget.ValidationTextField("duree", "real", {validateOn:["change"]});

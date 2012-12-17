@@ -64,6 +64,7 @@ include("lib/conf.site");
 		$('.entrainement').hide()
 		<?php
 		$_SESSION['nb']; 
+		$_SESSION['training']; 
 		if (isset($_POST['sport']) || isset($_POST['new_existe']))
 			echo " $('#entrainement".($_SESSION['nb']+2)."').show(); " ;
 			else echo "$('.entrainement:first').show();"
@@ -174,16 +175,21 @@ include("lib/conf.site");
 	$req = 'SELECT Date, Duree, Difficulte , FCmoy , Comments, Sport, Contenu, Filiere, Distance FROM effectue INNER JOIN seances ON effectue.Seance_Id = seances.Id INNER JOIN type ON type.Id = seances.Type WHERE Date LIKE  "'.$date_url_sql->format('Y-m-d').'" AND User_id =' . $_SESSION['auth']['id'].'';
 
 		$_SESSION['nb'] = num($req);
+		
 		$compteur=1;
 		$request = mysql_query($req);
 		while (($request != FALSE) && ($donnees = mysql_fetch_assoc($request))){
-
+		
 		echo '<div  class="entrainement" id="entrainement'.$compteur.'" >'; 
-		echo '<h2> Entrainement '.$compteur.' du '.$date_url_sql->format('l jS F Y').'</h2>'; ?>
+		echo '<h2> Entrainement '.$compteur.' du '.$date_url_sql->format('l jS F Y').'</h2>';
+		
+	?>
+		
 		<table>
 			<tr>
 				<td>
 					<h4><?php echo htmlspecialchars($donnees['Sport']);?></h4>
+					
 				</td>	
 				<td>
 					<h4><?php echo htmlspecialchars($donnees['Filiere']);?></h4>
@@ -250,7 +256,8 @@ include("lib/conf.site");
 	</div>
 		<?php 		
 			echo '<div  class="entrainement" id="entrainement'.($_SESSION['nb']+3).'" >';
-			include ('app/views/sportraining/addtraining.php');
+			
+			include ('app/views/sportraining/updatetraining.php');
 		?>
 	</div>
 </div>
