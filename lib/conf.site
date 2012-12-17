@@ -1,6 +1,0 @@
-<?php
-    $mysql = mysql_connect("localhost", "root", "");
-    $bdd = mysql_select_db("sportraining", $mysql);
-    mysql_set_charset('LATIN1');
-    
-?>
