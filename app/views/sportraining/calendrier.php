@@ -76,6 +76,7 @@ include("lib/conf.site");
 			if (entrainement != current){
 				$('#entrainement'+current).slideUp();
 				$('#entrainement'+entrainement).slideDown();
+				
 				current = entrainement;
 			}
 			return false;
@@ -172,7 +173,7 @@ include("lib/conf.site");
 <div id= "detail" >
 	
 	<?php $date_url_sql->setDate($year,$month,$day);
-	$req = 'SELECT Date, Duree, Difficulte , FCmoy , Comments, Sport, Contenu, Filiere, Distance FROM effectue INNER JOIN seances ON effectue.Seance_Id = seances.Id INNER JOIN type ON type.Id = seances.Type WHERE Date LIKE  "'.$date_url_sql->format('Y-m-d').'" AND User_id =' . $_SESSION['auth']['id'].'';
+	$req = 'SELECT Date, Duree, Difficulte , FCmoy , Comments, Sport, Contenu, Filiere, Distance, effectue.id FROM effectue INNER JOIN seances ON effectue.Seance_Id = seances.Id INNER JOIN type ON type.Id = seances.Type WHERE Date LIKE  "'.$date_url_sql->format('Y-m-d').'" AND User_id =' . $_SESSION['auth']['id'].'';
 
 		$_SESSION['nb'] = num($req);
 		
@@ -188,7 +189,8 @@ include("lib/conf.site");
 		<table>
 			<tr>
 				<td>
-					<h4><?php echo htmlspecialchars($donnees['Sport']);?></h4>
+					<script>document.write(current);</script>
+					<h4><?php echo htmlspecialchars($donnees['Sport']);$SESSION['id'] = $donnees['id'] ; ?></h4>
 					
 				</td>	
 				<td>
@@ -234,7 +236,7 @@ include("lib/conf.site");
 		<?php
 		if ($compteur!=1 and $compteur != $_SESSION['nb']+1) :
 			echo '<a id = "entrainementLink'.($compteur-1).'" ><img src="/static/images/previousButton.png" style="position : relative; top : 9px; margin-right : 8px;" > Entrainement Précedent </a>';
-			//	if ($compteur != 1 and $) : $_SESSION['nbr']=($compteur); endif;
+			//	if ($compteur != 1 and $) : $_SESSION['i']=($compteur); endif;
 			endif;
 		if ($compteur != ($_SESSION['nb']) and ($_SESSION['nb']+1)) :
 			echo '<a id = "entrainementLink'. ($compteur+1).'" style="position = relative; margin-left = 10px;"> Entrainement Suivant<img src="/static/images/nextButton.png" style="position : relative; top : 9px; margin-left : 8px;"></a>';

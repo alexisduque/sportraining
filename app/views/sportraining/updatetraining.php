@@ -33,7 +33,7 @@ echo '</style>';
 		<a href="#">Modifier entrainement</a>
 		<br>
 		<br>
-
+		<?php echo $SESSION['id']; ?>
 		</div>
 
 

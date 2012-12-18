@@ -8,8 +8,8 @@ include("lib/fonctions.php");
 
 $_REQUEST['distance'] = preg_replace("#,#", '.', $_REQUEST['distance']);
 $_REQUEST['comments'] = preg_replace("#'#", '.', $_REQUEST['comments']);
-$requete2="UPDATE effectue SET Duree =".$_REQUEST['duree'].", Difficulte =".$_REQUEST['difficulte'].", Fcmoy=".$_REQUEST['fcmoy'].", Comments='".$_REQUEST['comments']."', distance=".$_REQUEST['distance']."";
-echo $requete2; 
+$requete2="UPDATE effectue SET Duree =".$_REQUEST['duree'].", Difficulte =".$_REQUEST['difficulte'].", Fcmoy=".$_REQUEST['fcmoy'].", Comments='".$_REQUEST['comments']."', distance=".$_REQUEST['distance']." WHERHE id =".$SESSION['id']."" ;
+// echo $requete2; 
 mysql_query($requete2);	
 
 echo "<script language='Javascript'>";
