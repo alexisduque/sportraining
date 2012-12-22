@@ -198,7 +198,7 @@ include("lib/conf.site");
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td colspan="2">
 					<h5><?php echo htmlspecialchars($donnees['Contenu']);?></h5>
 				</td>
                 
@@ -216,7 +216,7 @@ include("lib/conf.site");
 					 <h5>FC moy : <?php echo htmlspecialchars($donnees['FCmoy']);?></h5>
 				</td>
 				<td>
-					 <h5>Diff : <?php echo htmlspecialchars($donnees['Difficulte']);?></h5>
+					 <h5>Difficultés : <?php echo htmlspecialchars($donnees['Difficulte']);?></h5>
 				</td>
 			</tr>
 						<tr>
@@ -246,7 +246,7 @@ include("lib/conf.site");
 			
 			
 			<tr>
-				<td>
+				<td colspan="2">
 					<h5><?php echo htmlspecialchars($donnees['Comments']);?></h5>
 				</td>
 			</tr>

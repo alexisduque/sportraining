@@ -35,7 +35,7 @@ echo'<select name="type" size="1" id="type">';
 </td>
 <td>
 		Date : (format: aaaa-mm-jj) <br />
-		      <input type="text" readonly name="date"  <?php if (isset($date_url_sql))echo 'value="'.$date_url_sql->format('Y/m/d').'"' ; else echo "value=\"2012/06/01\" onClick=\"displayCalendar(this,'yyyy/mm/dd', this)\" ";?>/>
+		      <input type="text" readonly name="date"  <?php if (isset($date_url_sql))echo 'value="'.$date_url_sql->format('Y/m/d').'"' ; else echo "value=\"".date("Y/m/d")."\" onClick=\"displayCalendar(this,'yyyy/mm/dd', this)\" ";?>/>
 		<br />
 <br />
 		Duree : <br />
@@ -124,7 +124,7 @@ echo'<select name="type" size="1" id="type">';
       </td>
       <td align="center">
 		   <p>Charge<br />
-    <input type="text" size="3px" name="charge" id="charge" />
+    <input type="text" size="3px" name="charge" id="charge" readonly="readonly"/>
 	</td>
 	</tr>
 	</td>
