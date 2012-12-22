@@ -43,6 +43,7 @@ echo "</script>\n";
 			<?php
 		}
 		?>
+			<option value="%">Tous</option>
 	</select>
 </p>
 
@@ -175,6 +176,7 @@ echo "</script>\n";
 		<option value="Difficulte">Difficulte</option>
 		<option value="Duree">Duree</option>
 		<option value="Distance">Distance</option>
+		<option value="Charge">Charge</option>
 
 	</select>
 </p>
@@ -244,16 +246,16 @@ if (isset($_POST['ordonnee']) && isset($_POST['regroup']) && isset($_POST['sport
 	
 		
 		if ($regroup == 'Jour'){
-		$request = "SELECT $abscisse, $ordonnee FROM effectue,seances WHERE effectue.User_Id =". $_SESSION['auth']['id'] ." AND effectue.Seance_Id = seances.id AND seances.Sport ='$sport' AND effectue.Date>= '$date_min' and effectue.Date<='$date_max' ORDER BY Date ";
+		$request = "SELECT $abscisse, $ordonnee FROM effectue,seances WHERE effectue.User_Id =". $_SESSION['auth']['id'] ." AND effectue.Seance_Id = seances.id AND seances.Sport LIKE '$sport' AND effectue.Date>= '$date_min' and effectue.Date<='$date_max' ORDER BY Date ";
 		}
 		if ($regroup == 'Mois'){		
-		$request = "SELECT extract(year_month FROM $abscisse) AS $abscisse, AVG($ordonnee) AS $ordonnee  FROM effectue,seances WHERE effectue.User_Id =". $_SESSION['auth']['id'] ." AND effectue.Seance_Id = seances.id AND seances.Sport ='$sport' AND effectue.Date>= '$date_min' and effectue.Date<='$date_max' GROUP BY MONTH(Date), YEAR(Date) ";
+		$request = "SELECT extract(year_month FROM $abscisse) AS $abscisse, AVG($ordonnee) AS $ordonnee  FROM effectue,seances WHERE effectue.User_Id =". $_SESSION['auth']['id'] ." AND effectue.Seance_Id = seances.id AND seances.Sport LIKE '$sport' AND effectue.Date>= '$date_min' and effectue.Date<='$date_max' GROUP BY MONTH(Date), YEAR(Date) ";
 		}
 		if ($regroup == 'Annee'){
-			$request = "SELECT YEAR($abscisse) AS $abscisse, AVG($ordonnee) AS $ordonnee  FROM effectue,seances WHERE effectue.User_Id =". $_SESSION['auth']['id'] ." AND effectue.Seance_Id = seances.id AND seances.Sport ='$sport' AND effectue.Date>= '$date_min' and effectue.Date<='$date_max' GROUP BY YEAR(Date) ";
+			$request = "SELECT YEAR($abscisse) AS $abscisse, AVG($ordonnee) AS $ordonnee  FROM effectue,seances WHERE effectue.User_Id =". $_SESSION['auth']['id'] ." AND effectue.Seance_Id = seances.id AND seances.Sport LIKE '$sport' AND effectue.Date>= '$date_min' and effectue.Date<='$date_max' GROUP BY YEAR(Date) ";
 		}
 		if ($regroup == 'Semaine'){
-			$request = "SELECT ((YEAR($abscisse)*100) + WEEK($abscisse)) AS $abscisse, AVG($ordonnee) AS $ordonnee  FROM effectue,seances WHERE effectue.User_Id =". $_SESSION['auth']['id'] ." AND effectue.Seance_Id = seances.id AND seances.Sport ='$sport' AND effectue.Date>= '$date_min' and effectue.Date<='$date_max' GROUP BY WEEK(DATE),YEAR(Date) ORDER BY ((YEAR($abscisse)*100) + WEEK($abscisse)) ";
+			$request = "SELECT ((YEAR($abscisse)*100) + WEEK($abscisse)) AS $abscisse, AVG($ordonnee) AS $ordonnee  FROM effectue,seances WHERE effectue.User_Id =". $_SESSION['auth']['id'] ." AND effectue.Seance_Id = seances.id AND seances.Sport LIKE '$sport' AND effectue.Date>= '$date_min' and effectue.Date<='$date_max' GROUP BY WEEK(DATE),YEAR(Date) ORDER BY ((YEAR($abscisse)*100) + WEEK($abscisse)) ";
 		}
 		
 		
