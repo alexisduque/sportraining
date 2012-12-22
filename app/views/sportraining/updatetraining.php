@@ -33,7 +33,7 @@ echo '</style>';
 		<a href="#">Modifier entrainement</a>
 		<br>
 		<br>
-		<?php echo $SESSION['id']; ?>
+		
 		</div>
 
 
@@ -77,7 +77,9 @@ echo '</style>';
       <br />
       <input type="submit" value="Valider" />
     </p>
+  <input type="hidden" name="id" value="<?php echo $SESSION['id']; ?>" />
 </form>
+
 <div class="comments"></div>
 		</div>
 
