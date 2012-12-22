@@ -173,7 +173,7 @@ include("lib/conf.site");
 <div id= "detail" >
 	
 	<?php $date_url_sql->setDate($year,$month,$day);
-	$req = 'SELECT Date, Duree, Difficulte , FCmoy , Comments, Sport, Contenu, Filiere, Distance, effectue.id FROM effectue INNER JOIN seances ON effectue.Seance_Id = seances.Id INNER JOIN type ON type.Id = seances.Type WHERE Date LIKE  "'.$date_url_sql->format('Y-m-d').'" AND User_id =' . $_SESSION['auth']['id'].'';
+	$req = 'SELECT Date, Duree, Difficulte , FCmoy , Comments, Sport, Contenu, Filiere, Distance, z1, z2, z3, z4, z5, charge, effectue.id FROM effectue INNER JOIN seances ON effectue.Seance_Id = seances.Id INNER JOIN type ON type.Id = seances.Type WHERE Date LIKE  "'.$date_url_sql->format('Y-m-d').'" AND User_id =' . $_SESSION['auth']['id'].'';
 
 		$_SESSION['nb'] = num($req);
 		
@@ -213,12 +213,37 @@ include("lib/conf.site");
 			</tr>
 			<tr>
 				<td>
-					 <h4>FC moy : <?php echo htmlspecialchars($donnees['FCmoy']);?></h4>
+					 <h5>FC moy : <?php echo htmlspecialchars($donnees['FCmoy']);?></h5>
 				</td>
 				<td>
-					 <h4>Diff : <?php echo htmlspecialchars($donnees['Difficulte']);?></h4>
+					 <h5>Diff : <?php echo htmlspecialchars($donnees['Difficulte']);?></h5>
 				</td>
 			</tr>
+						<tr>
+				<td>
+					 <h4>Z1 : <?php echo htmlspecialchars($donnees['z1']);?></h4>
+				</td>
+				<td>
+					 <h4>Z2 : <?php echo htmlspecialchars($donnees['z2']);?></h4>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					 <h4>Z3 : <?php echo htmlspecialchars($donnees['z3']);?></h4>
+				</td>
+				<td>
+					 <h4>Z4 : <?php echo htmlspecialchars($donnees['z4']);?></h4>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					 <h4>Z5 : <?php echo htmlspecialchars($donnees['z5']);?></h4>
+				</td>
+				<td>
+					 <h5>Charge : <?php echo htmlspecialchars($donnees['charge']);?></h5>
+				</td>
+			</tr>
+			
 			
 			<tr>
 				<td>

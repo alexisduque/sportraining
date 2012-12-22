@@ -23,7 +23,7 @@ $id = $_REQUEST['id_seance'] ;
 }
 $_REQUEST['distance'] = preg_replace("#,#", '.', $_REQUEST['distance']);
 $_REQUEST['comments'] = preg_replace("#'#", '.', $_REQUEST['comments']);
-$requete2="INSERT INTO effectue VALUES ('', ".$id.", '".$_REQUEST['date']."', ".$_SESSION['auth']['id'].", ".$_REQUEST['duree'].", ".$_REQUEST['difficulte']." , ".$_REQUEST['fcmoy'].", '".$_REQUEST['comments']."', ".$_REQUEST['distance'].")";
+$requete2="INSERT INTO effectue VALUES ('', ".$id.", '".$_REQUEST['date']."', ".$_SESSION['auth']['id'].", ".$_REQUEST['duree'].", ".$_REQUEST['difficulte']." , ".$_REQUEST['fcmoy'].", '".$_REQUEST['comments']."', ".$_REQUEST['distance'].", ".$_REQUEST['z1'].", ".$_REQUEST['z2'].", ".$_REQUEST['z3'].", ".$_REQUEST['z4'].", ".$_REQUEST['z5'].", ".$_REQUEST['charge'].")";
 // echo $requete2;
 mysql_query($requete2);	
 

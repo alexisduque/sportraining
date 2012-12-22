@@ -62,7 +62,11 @@ else
 	
 <script type="text/javascript">
 var sprytextfield1 = new Spry.Widget.ValidationTextField("duree", "real", {validateOn:["change"]});
-var sprytextfield2 = new Spry.Widget.ValidationTextField("fcmoy", "integer", {validateOn:["change"]});
+var z2 = new Spry.Widget.ValidationTextField("z2", "integer", {validateOn:["change"]});
+var z1 = new Spry.Widget.ValidationTextField("z1", "integer", {validateOn:["change"]});
+var z3 = new Spry.Widget.ValidationTextField("z3", "integer", {validateOn:["change"]});
+var z4 = new Spry.Widget.ValidationTextField("z4", "integer", {validateOn:["change"]});
+var z5 = new Spry.Widget.ValidationTextField("z5", "integer", {validateOn:["change"]});
 var sprytextarea1 = new Spry.Widget.ValidationTextarea("comments");
 var sprytextfield3 = new Spry.Widget.ValidationTextField("distance", "real", {validateOn:["change"], isRequired:false});
 
