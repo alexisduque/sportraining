@@ -34,8 +34,8 @@ echo '</style>';
 		<br>
 
 		</div>
-/*
-     <form id ="choix" method="post">
+
+ <!--    <form id ="choix" method="post">
 	  <label>
 	    <input type="radio" name="new_existe" value="1" id="new_exist_0" onclick="submit(this)" <?php if (isset($_POST['new_existe']) && ($_POST['new_existe'] == 1)) echo 'checked="checked"'?> />
       Nouvelle seance</label>
@@ -45,13 +45,14 @@ echo '</style>';
 	    Seance existante</label>
 	</p>
     </form>      
-*/
+-->
+
 <?php
 
-if ( (isset ($_POST['new_existe'])) && ($_POST['new_existe']== 1)) $new = 1 ;
-else if ( (isset ($_POST['new_existe'])) && ($_POST['new_existe']==2)) $new = 2 ;
-else $new=2 ;
-
+//if ( (isset ($_POST['new_existe'])) && ($_POST['new_existe']== 1)) $new = 1 ;
+//else if ( (isset ($_POST['new_existe'])) && ($_POST['new_existe']==2)) $new = 2 ;
+//else $new=2 ;
+$new= 1;
 if ($new == 2)
 {
 	include("lib/training.php");
