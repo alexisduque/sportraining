@@ -34,6 +34,7 @@ echo '</style>';
 		<br>
 
 		</div>
+/*
      <form id ="choix" method="post">
 	  <label>
 	    <input type="radio" name="new_existe" value="1" id="new_exist_0" onclick="submit(this)" <?php if (isset($_POST['new_existe']) && ($_POST['new_existe'] == 1)) echo 'checked="checked"'?> />
@@ -44,6 +45,7 @@ echo '</style>';
 	    Seance existante</label>
 	</p>
     </form>      
+*/
 <?php
 
 if ( (isset ($_POST['new_existe'])) && ($_POST['new_existe']== 1)) $new = 1 ;

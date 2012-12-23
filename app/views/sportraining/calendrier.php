@@ -144,8 +144,13 @@ include("lib/conf.site");
 							<ul><?php   
 							
 							while (($request != FALSE) && ($donnees = mysql_fetch_assoc($request))){
-								echo '<li>- '. htmlspecialchars($donnees['Sport']). ' ' .htmlspecialchars($donnees['Duree'].'\'') .'</li>' ;}
+								if ($donnees['Sport'] == "Course")  echo '<font color = "red">' ; else if ($donnees['Sport'] == "Natation") echo '<font color ="blue">'; else if ($donnees['Sport'] == "Cyclisme") echo '<font color ="orange">'; else echo '<font>';
+							 
+								echo '<li>- '. htmlspecialchars($donnees['Sport']). ' ' .htmlspecialchars($donnees['Duree'].'\'') .'</li>' ; echo '</font>';	}
+							
+							
 							?>
+							
 							</ul>
 							<div class="daynumber"><?php echo ("$d"); ?></div>
 							</div>
