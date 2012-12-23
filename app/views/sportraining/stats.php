@@ -25,6 +25,26 @@ echo "</script>\n";
 	link_to_css("style");
 	link_to_js("corresp_mois_jour");
 ?>
+<?php
+
+	if (!isset($_POST['ordonnee']) && !isset($_POST['regroup']) && !isset($_POST['sport']) && !isset($_POST['annee']) && !isset($_POST['mois']) && !isset($_POST['jour']) && !isset($_POST['mois1']) && !isset($_POST['annee1'])) {
+		$_POST['ordonnee'] ="Charge";
+		$_POST['regroup']= "Semaine";
+		$_POST['sport'] = "%";
+		$_POST['annee'] = "2012";
+		$_POST['mois'] = "10";
+		$_POST['jour'] = "01";
+		$_POST['mois1'] = "12";
+		$_POST['annee1'] = "2012";
+		$_POST['jour1'] = "31";
+	$date_min = date("2012-10-01");
+	$date_max = date("2013-12-31");
+		$abscisse = 'Date';
+	$ordonnee = $_POST['ordonnee'];
+	$sport = $_POST['sport'];
+	$regroup = $_POST['regroup'];
+	}
+?>
 
 <form  method="post" id="form1" action="stats">
 
