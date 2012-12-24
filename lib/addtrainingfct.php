@@ -10,7 +10,7 @@ if (isset($_REQUEST['id_seance']) == false) {
 $get_type = "SELECT id From type WHERE Filiere = '".$_REQUEST['type']."'";
 $type = mysql_query($get_type);
 $filiere = mysql_fetch_assoc($type);
-$_REQUEST['contenu'] = preg_replace("#'#", 'min', $_REQUEST['comments']);	
+$_REQUEST['contenu'] = preg_replace("#'#", 'min', $_REQUEST['contenu']);	
 $requete1="INSERT INTO seances VALUES ('','".$_REQUEST['sport']."','".$_REQUEST['contenu']."', ".$filiere ['id'].")";
 mysql_query($requete1);
 echo $requete1;

@@ -62,7 +62,6 @@ else
 	include("lib/training_tot.php");
 }
 ?>
-	
 <script type="text/javascript">
 var sprytextfield1 = new Spry.Widget.ValidationTextField("duree", "real", {validateOn:["change"]});
 var z2 = new Spry.Widget.ValidationTextField("z2", "integer", {validateOn:["change"]});
@@ -70,7 +69,10 @@ var z1 = new Spry.Widget.ValidationTextField("z1", "integer", {validateOn:["chan
 var z3 = new Spry.Widget.ValidationTextField("z3", "integer", {validateOn:["change"]});
 var z4 = new Spry.Widget.ValidationTextField("z4", "integer", {validateOn:["change"]});
 var z5 = new Spry.Widget.ValidationTextField("z5", "integer", {validateOn:["change"]});
+var z5 = new Spry.Widget.ValidationTextField("fcmoy", "integer", {validateOn:["change"]});
+var z5 = new Spry.Widget.ValidationTextField("duree", "integer", {validateOn:["change"]});
 var sprytextarea1 = new Spry.Widget.ValidationTextarea("comments");
+var sprytextarea2 = new Spry.Widget.ValidationTextarea("sprytextarea2");
 var sprytextfield3 = new Spry.Widget.ValidationTextField("distance", "real", {validateOn:["change"], isRequired:false});
 
 </script>
