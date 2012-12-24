@@ -13,7 +13,7 @@ $filiere = mysql_fetch_assoc($type);
 $_REQUEST['contenu'] = preg_replace("#'#", 'min', $_REQUEST['contenu']);	
 $requete1="INSERT INTO seances VALUES ('','".$_REQUEST['sport']."','".$_REQUEST['contenu']."', ".$filiere ['id'].")";
 mysql_query($requete1);
-echo $requete1;
+//echo $requete1;
 $id = mysql_insert_id() ;
 // echo $id;
 } else {
