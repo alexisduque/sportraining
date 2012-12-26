@@ -128,9 +128,11 @@
             </td>
         </tr>
     </table>
+    <tr><td colspan="2" align="center">
+        <table width="30%"><tr><td align="center"> <button class="btn btn-block btn-success" type="submit">Valider</button></td></tr>
+        </td></tr></table>
+        
 </table>
-
-<input type="submit" value="Valider" />
 </p>
 </form>	
 <div class="comments"></div>
