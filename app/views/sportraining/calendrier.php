@@ -2,7 +2,7 @@
 /*
  * calendrier.php
  * 
- * Copyright 2012 ClÃ©ment <Clément@CLÉMENT-PC>
+ * Copyright 2012 ClÃ©ment <Clï¿½ment@CLï¿½MENT-PC>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@
 <?php
 	include("lib/conf.site");
 ?>
-<!-- Lien au fichier CSS spécifique du calendrier -->
+<!-- Lien au fichier CSS spï¿½cifique du calendrier -->
 
 <style type="text/css" media="screen">
 	<?php link_to_css("calendrier");
@@ -36,7 +36,7 @@
 
 
 
-<!-- Vérification qu'une session existe et que l'utilisateur est connecté -->
+<!-- Vï¿½rification qu'une session existe et que l'utilisateur est connectï¿½ -->
 
 <?php
 if(!isset($_SESSION['auth']))
@@ -50,7 +50,7 @@ echo "</script>\n";
 }
 ?>
 
-<!-- Connexion à la base de données-->
+<!-- Connexion ï¿½ la base de donnï¿½es-->
 
 <?php
 include("lib/conf.site");
@@ -221,7 +221,7 @@ include("lib/conf.site");
 					 <h5>FC moy : <?php echo htmlspecialchars($donnees['FCmoy']);?></h5>
 				</td>
 				<td>
-					 <h5>Difficultés : <?php echo htmlspecialchars($donnees['Difficulte']);?></h5>
+					 <h5>Difficultï¿½s : <?php echo htmlspecialchars($donnees['Difficulte']);?></h5>
 				</td>
 			</tr>
 						<tr>
@@ -265,7 +265,7 @@ include("lib/conf.site");
 		</table>
 		<?php
 		if ($compteur!=1 and $compteur != $_SESSION['nb']+1) :
-			echo '<a id = "entrainementLink'.($compteur-1).'" ><img src="/static/images/previousButton.png" style="position : relative; top : 9px; margin-right : 8px;" > Entrainement Précedent </a>';
+			echo '<a id = "entrainementLink'.($compteur-1).'" ><img src="/static/images/previousButton.png" style="position : relative; top : 9px; margin-right : 8px;" > Entrainement Prï¿½cedent </a>';
 			//	if ($compteur != 1 and $) : $_SESSION['i']=($compteur); endif;
 			endif;
 		if ($compteur != ($_SESSION['nb']) and ($_SESSION['nb']+1)) :

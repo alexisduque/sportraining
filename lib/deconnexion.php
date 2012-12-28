@@ -1,16 +1,38 @@
+<html>
+    <head>
+         <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+
 <?php
 session_start();
 //deconnexion
 unset ($_SESSION['auth']);
 
-echo "<script language='Javascript'>";
-//echo "bootstrap_alert = function() {}bootstrap_alert.warning = function(message) { $(\"#alert_placeholder').html('<div class=\"alert\"><a class=\"close\" data-dismiss=\"alert\">×</a><span>'+message+'</span></div>')}$('#clickme').on('click', function() {  bootstrap_alert.warning('Your text goes here');});"
+echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>';
 
-echo "<!--\n";
-echo "alert ('Vous \352tes d\351sormais deconnect\351');\n";;
-echo "location.href='/sportraining/index';\n";
-echo "// -->\n";
+echo '<script src="/static/bootstrap/js/bootstrap.min.js"></script>';
+
+
+echo '<script src="/static/bootbox.min.js"></script>';
+
+echo '<script type="text/javascript">';
+
+
+//echo "<!--\n";
+//echo "alert ('Vous \352tes d\351sormais deconnect\351');\n";
+//
+//echo "// -->\n";
+
+
+echo '$(document).ready(function(e){';
+
+echo 'bootbox.alert("Vous \352tes d\351sormais deconnect\351 !", function(e){location.href="/sportraining/index";});';
+
+echo '});';
 echo "</script>\n";
 
 ?>
+    </body>
+</html>
 	

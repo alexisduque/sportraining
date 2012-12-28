@@ -1,6 +1,6 @@
 <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script> 	
-<script src="/static/javascript/jquery-1.8.3.min.js"></script>  
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ <script src="/static/bootbox.min.js"></script>
 <div class="entry">
     <br>
     <div class="entry-title"><a href="#">Veuillez vous identifier</a></div>

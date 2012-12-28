@@ -6,6 +6,7 @@
         <title>Carnet d'entrainement en ligne !</title>
         <style type="text/css" media="screen">
 <?php
+
 link_to_css("style");
 date_default_timezone_set('UTC');
 ?>
